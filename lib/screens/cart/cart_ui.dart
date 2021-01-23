@@ -83,19 +83,16 @@ class _CartUIState extends State<CartUI> {
             ],
           ),
           subtitle: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 'Service Tax (6%)',
                 style: TextStyle(fontSize: 18),
               ),
-              SizedBox(width: width - 388),
-              Container(
-                width: 200,
-                child: Text(
-                  '\$${roundCurrency(_cartBloc.tax, 2)}',
-                  textAlign: TextAlign.right,
-                  style: TextStyle(fontSize: 22),
-                ),
+              Text(
+                '\$${roundCurrency(_cartBloc.tax, 2)}',
+                textAlign: TextAlign.right,
+                style: TextStyle(fontSize: 22),
               ),
             ],
           ),
