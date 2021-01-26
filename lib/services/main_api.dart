@@ -4,7 +4,7 @@ import '../models/response_model.dart';
 import 'api.dart';
 
 abstract class MainApi extends Api<ResponseModel> {
-  MainApi() : super('http://192.168.137.1/test_res/');
+  MainApi() : super('https://projectsdp.000webhostapp.com/');
 }
 
 class ResponseModelApi extends MainApi {

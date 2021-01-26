@@ -100,7 +100,7 @@ class _CartItemState extends State<CartItem> {
                 ),
                 Positioned(
                   right: 45,
-                  top: 40,
+                  top: 75,
                   child: Container(
                     width: 30.0,
                     child: Text(
@@ -110,7 +110,7 @@ class _CartItemState extends State<CartItem> {
                   ),
                 ),
                 Positioned(
-                  top: 30,
+                  top: 65,
                   right: 60,
                   child: IconButton(
                     icon: Icon(Icons.expand_less),
@@ -120,7 +120,7 @@ class _CartItemState extends State<CartItem> {
                   ),
                 ),
                 Positioned(
-                  top: 30,
+                  top: 65,
                   right: 10,
                   child: IconButton(
                     icon: Icon(Icons.expand_more),
