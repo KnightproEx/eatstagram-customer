@@ -70,7 +70,8 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
 
         if (state is OrderLoaded && state.order.status == 3) {
           timer?.cancel();
-          Navigator.of(context).pushNamed('/ThankYou');
+
+          Navigator.of(context).pushReplacementNamed('/ThankYou');
         }
       },
       builder: (context, state) {

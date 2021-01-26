@@ -204,10 +204,7 @@ class _ThankYouState extends State<ThankYou> {
           ),
 
           RaisedButton(
-            onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-              '/Scanner',
-              (_) => false,
-            ),
+            onPressed: () => Navigator.of(context).pop(),
             child: Text('Order Again'),
           )
         ],
