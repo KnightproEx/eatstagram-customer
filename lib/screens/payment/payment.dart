@@ -24,7 +24,7 @@ class Payment extends StatelessWidget {
 
           if (state is PaymentSuccess) {
             Navigator.of(context).pushNamedAndRemoveUntil(
-              '/Scanner/OrderStatus',
+              '/OrderStatus',
               (_) => false,
             );
           }

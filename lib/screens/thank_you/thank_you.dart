@@ -1,3 +1,5 @@
+import 'package:eatstagram/screens/restaurant/restaurant.dart';
+import 'package:eatstagram/screens/scanner/scanner_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -204,7 +206,8 @@ class _ThankYouState extends State<ThankYou> {
           ),
 
           RaisedButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () =>
+                Navigator.of(context).pushReplacementNamed('/Menu'),
             child: Text('Order Again'),
           )
         ],

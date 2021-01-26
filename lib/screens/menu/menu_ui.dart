@@ -126,84 +126,90 @@ class _MenuUIState extends State<MenuUI> {
               child: ListView.builder(
                 itemCount: _menuList.length,
                 itemBuilder: (_, index) {
-                  return Card(
-                    margin: const EdgeInsets.only(
-                      top: 5.0,
-                      left: 10.0,
-                      right: 10.0,
-                      bottom: 5.0,
-                    ),
-                    elevation: 7.0,
-                    // Prevents picture from overriding card borders
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    borderOnForeground: true,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
-                    ),
-                    child: Stack(
-                      children: <Widget>[
-                        Image.network(
-                          // TODO: placeholder image
-                          // TODO: loading builder
-                          // TODO: error builder
-                          _menuList[index].imagePath,
-                          fit: BoxFit.fill,
-                        ),
-                        Positioned(
-                          top: 160,
-                          left: 15,
-                          child: Text(
-                            _menuList[index].name,
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
-                              fontSize: 30,
-                              fontWeight: FontWeight.w900,
+                  return Container(
+                    height: 270,
+                    child: Card(
+                      margin: const EdgeInsets.only(
+                        top: 5.0,
+                        left: 10.0,
+                        right: 10.0,
+                        bottom: 5.0,
+                      ),
+                      elevation: 7.0,
+                      // Prevents picture from overriding card borders
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      borderOnForeground: true,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      child: Stack(
+                        children: <Widget>[
+                          Positioned.fill(
+                            child: Image.network(
+                              // TODO: placeholder image
+                              // TODO: loading builder
+                              // TODO: error builder
+                              _menuList[index].imagePath,
+                              fit: BoxFit.cover,
                             ),
                           ),
-                        ),
-                        Positioned(
-                          top: 200,
-                          left: 15,
-                          child: Text(
-                            _menuList[index].desc,
-                            style: TextStyle(
-                              color: Colors.white.withOpacity(0.9),
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          top: 20,
-                          right: 15,
-                          child: Chip(
-                            backgroundColor: Colors.greenAccent,
-                            label: Text(
-                                '\$${roundCurrency(_menuList[index].price, 2)}'),
-                          ),
-                        ),
-                        Positioned(
-                          top: 180.0,
-                          right: 15.0,
-                          child: IconButton(
-                            icon: Icon(
-                              Icons.add_circle_outlined,
-                              color: Colors.white.withOpacity(0.9),
-                              size: 32,
-                            ),
-                            onPressed: () => showModalBottomSheet(
-                              context: context,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(15.0),
-                                  topRight: Radius.circular(15.0),
-                                ),
+                          Positioned(
+                            top: 160,
+                            left: 15,
+                            child: Text(
+                              _menuList[index].name,
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.9),
+                                fontSize: 30,
+                                fontWeight: FontWeight.w900,
                               ),
-                              builder: (_) => MenuBottomSheet(_menuList[index]),
                             ),
                           ),
-                        ),
-                      ],
+                          Positioned(
+                            top: 200,
+                            left: 15,
+                            child: Text(
+                              _menuList[index].desc,
+                              style: TextStyle(
+                                color: Colors.white.withOpacity(0.9),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 20,
+                            right: 15,
+                            child: Chip(
+                              backgroundColor: Colors.white.withOpacity(0.9),
+                              label: Text(
+                                  '\R\M${roundCurrency(_menuList[index].price, 2)}'),
+                            ),
+                          ),
+                          Positioned(
+                            top: 180.0,
+                            right: 15.0,
+                            child: IconButton(
+                              icon: Icon(
+                                Icons.add_circle_outlined,
+                                color: Colors.white.withOpacity(0.9),
+                                size: 32,
+                              ),
+                              onPressed: () => showModalBottomSheet(
+                                context: context,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(15.0),
+                                    topRight: Radius.circular(15.0),
+                                  ),
+                                ),
+                                builder: (_) =>
+                                    MenuBottomSheet(_menuList[index]),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
