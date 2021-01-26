@@ -18,6 +18,7 @@ class _MenuUIState extends State<MenuUI> {
   MenuBloc _homeBloc;
   List<MenuModel> _menuList;
   List<String> _categoryList;
+  var _controller = TextEditingController();
 
   @override
   void didChangeDependencies() {
@@ -45,6 +46,7 @@ class _MenuUIState extends State<MenuUI> {
           ),
           child: TextField(
             onChanged: (value) => _homeBloc.add(SearchMenu(value)),
+            controller: _controller,
             decoration: InputDecoration(
               hintStyle: TextStyle(fontSize: 17),
               hintText: 'Let\'s find good food',
@@ -61,7 +63,6 @@ class _MenuUIState extends State<MenuUI> {
           // child: DefaultTextfield(
           //   hintText: 'Let\'s find good food',
           //   suffixIcon: Icons.search,
-          //   controller: _searchController,
           // ),
         ),
 
@@ -85,13 +86,16 @@ class _MenuUIState extends State<MenuUI> {
               return Container();
             }
 
-            List<Chip> chipList = [];
+            List<GestureDetector> chipList = [];
 
             for (String category in _categoryList) {
               chipList.add(
-                Chip(
-                  label: Text(
-                    category,
+                GestureDetector(
+                  onTap: () => _controller.text = category,
+                  child: Chip(
+                    label: Text(
+                      category,
+                    ),
                   ),
                 ),
               );
