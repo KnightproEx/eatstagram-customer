@@ -11,13 +11,10 @@ part 'payment_event.dart';
 part 'payment_state.dart';
 
 class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
-  PaymentMethod _paymentMethod;
-  String _orderID;
+  PaymentMethod _paymentMethod = PaymentMethod.none;
+  String _orderID = '';
 
-  PaymentBloc()
-      : _paymentMethod = PaymentMethod.none,
-        _orderID = '',
-        super(PaymentInitial());
+  PaymentBloc() : super(PaymentInitial());
 
   PaymentMethod get paymentMethod => _paymentMethod;
   String get orderID => _orderID;

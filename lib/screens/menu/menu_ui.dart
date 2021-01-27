@@ -15,18 +15,18 @@ class MenuUI extends StatefulWidget {
 }
 
 class _MenuUIState extends State<MenuUI> {
-  MenuBloc _homeBloc;
+  MenuBloc _menuBloc;
   List<MenuModel> _menuList;
   List<String> _categoryList;
 
   @override
   void didChangeDependencies() {
-    _homeBloc = BlocProvider.of<MenuBloc>(context);
+    _menuBloc = BlocProvider.of<MenuBloc>(context);
     _menuList = [];
     _categoryList = [];
 
     String id = BlocProvider.of<RestaurantBloc>(context).restaurant.id;
-    _homeBloc.add(FetchMenu(id));
+    _menuBloc.add(FetchMenu(id));
 
     super.didChangeDependencies();
   }
@@ -44,7 +44,7 @@ class _MenuUIState extends State<MenuUI> {
             bottom: 10.0,
           ),
           child: TextField(
-            onChanged: (value) => _homeBloc.add(SearchMenu(value)),
+            onChanged: (value) => _menuBloc.add(SearchMenu(value)),
             decoration: InputDecoration(
               hintStyle: TextStyle(fontSize: 17),
               hintText: 'Let\'s find good food',
@@ -58,11 +58,6 @@ class _MenuUIState extends State<MenuUI> {
               contentPadding: EdgeInsets.all(20),
             ),
           ),
-          // child: DefaultTextfield(
-          //   hintText: 'Let\'s find good food',
-          //   suffixIcon: Icons.search,
-          //   controller: _searchController,
-          // ),
         ),
 
         // Food cuisine chip

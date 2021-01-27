@@ -62,7 +62,7 @@ class _MenuBottomSheetState extends State<MenuBottomSheet> {
                     ),
                     splashRadius: 20.0,
                     onPressed: () =>
-                        setState(() => _count -= _count <= 0 ? 0 : 1),
+                        setState(() => _count -= _count <= 1 ? 0 : 1),
                   )
                 ],
               )),

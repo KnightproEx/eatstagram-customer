@@ -18,7 +18,6 @@ class _MealOptionUIState extends State<MealOptionUI> {
 
   @override
   void didChangeDependencies() {
-    BlocProvider.of<CartBloc>(context).add(InitializeCart());
     BlocProvider.of<RestaurantBloc>(context).setTable(1);
 
     _itemList = BlocProvider.of<RestaurantBloc>(context).tableList;
@@ -125,8 +124,7 @@ class _MealOptionUIState extends State<MealOptionUI> {
                           icon: Text('CONTINUE'),
                           label: Icon(Icons.arrow_forward),
                           onPressed: () {
-                            BlocProvider.of<CartBloc>(context)
-                                .add(InitializeCart());
+                            BlocProvider.of<CartBloc>(context).add(EmptyCart());
                             Navigator.of(context).pushNamed('/Menu');
                           }),
                     )

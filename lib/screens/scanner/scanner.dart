@@ -9,32 +9,37 @@ import 'scanner_ui.dart';
 class Scanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: DefaultAppBar(),
-      body: BlocConsumer<RestaurantBloc, RestaurantState>(
-        buildWhen: (_, current) => current is! RestaurantError,
-        listenWhen: (_, current) =>
-            current is RestaurantError || current is RestaurantLoaded,
-        listener: (context, state) {
-          if (state is RestaurantError) {
-            Scaffold.of(context).showSnackBar(
-              defaultSnackBar(state.message),
-            );
-          }
+    return WillPopScope(
+      onWillPop: () {
+        return Future.value(false);
+      },
+      child: Scaffold(
+        appBar: DefaultAppBar(backButton: false),
+        body: BlocConsumer<RestaurantBloc, RestaurantState>(
+          buildWhen: (_, current) => current is! RestaurantError,
+          listenWhen: (_, current) =>
+              current is RestaurantError || current is RestaurantLoaded,
+          listener: (context, state) {
+            if (state is RestaurantError) {
+              Scaffold.of(context).showSnackBar(
+                defaultSnackBar(state.message),
+              );
+            }
 
-          if (state is RestaurantLoaded) {
-            Navigator.of(context).pushNamed('/Restaurant');
-          }
-        },
-        builder: (_, state) {
-          if (state is RestaurantLoading) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
+            if (state is RestaurantLoaded) {
+              Navigator.of(context).pushNamed('/Restaurant');
+            }
+          },
+          builder: (_, state) {
+            if (state is RestaurantLoading) {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
 
-          return ScannerUI();
-        },
+            return ScannerUI();
+          },
+        ),
       ),
     );
   }

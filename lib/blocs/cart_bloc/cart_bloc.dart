@@ -39,7 +39,8 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Stream<CartState> mapEventToState(CartEvent event) async* {
     yield CartInitial();
 
-    if (event is InitializeCart) {
+    if (event is EmptyCart) {
+      print('empty cart');
       _cart.clear();
     }
 
@@ -63,7 +64,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
 
     if (event is ItemDecrement) {
-      _cart[event._id]['quantity'] -= _cart[event._id]['quantity'] <= 0 ? 0 : 1;
+      _cart[event._id]['quantity'] -= _cart[event._id]['quantity'] <= 1 ? 0 : 1;
       yield CartLoaded();
     }
 
