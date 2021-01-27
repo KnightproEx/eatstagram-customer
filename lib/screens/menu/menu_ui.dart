@@ -95,6 +95,7 @@ class _MenuUIState extends State<MenuUI> {
                   child: Chip(
                     label: Text(
                       category,
+                      style: Theme.of(context).textTheme.headline2,
                     ),
                   ),
                 ),
