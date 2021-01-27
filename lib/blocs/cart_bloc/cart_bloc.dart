@@ -9,11 +9,9 @@ part 'cart_event.dart';
 part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
-  Map<String, Map<String, dynamic>> _cart;
+  Map<String, Map<String, dynamic>> _cart = {};
 
-  CartBloc()
-      : _cart = {},
-        super(CartInitial());
+  CartBloc() : super(CartInitial());
 
   List<Map<String, dynamic>> get cart {
     List<Map<String, dynamic>> temp = [];

@@ -45,7 +45,8 @@ class _MenuBottomSheetState extends State<MenuBottomSheet> {
                   IconButton(
                     icon: Icon(Icons.expand_less),
                     splashRadius: 20.0,
-                    onPressed: () => setState(() => _count++),
+                    onPressed: () =>
+                        setState(() => _count += _count >= 20 ? 0 : 1),
                   ),
                   Text(
                     _count.toString(),
@@ -61,7 +62,7 @@ class _MenuBottomSheetState extends State<MenuBottomSheet> {
                     ),
                     splashRadius: 20.0,
                     onPressed: () =>
-                        setState(() => _count += _count <= 1 ? 0 : 1),
+                        setState(() => _count -= _count <= 0 ? 0 : 1),
                   )
                 ],
               )),
