@@ -144,22 +144,11 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
                       fontSize: 20,
                     ),
                   ),
-                  subtitle: Row(
-                    children: [
-                      Icon(
-                        Icons.timer_outlined,
-                        size: 18,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        '12:45 pm',
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
-                    ],
+                  subtitle: Text(
+                    'Ready , set , go !',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
                   ),
                 ),
               ),
@@ -193,22 +182,11 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
                       fontSize: 20,
                     ),
                   ),
-                  subtitle: Row(
-                    children: [
-                      Icon(
-                        Icons.timer_outlined,
-                        size: 18,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        '12:45 pm',
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
-                    ],
+                  subtitle: Text(
+                    'Things are heating up ...',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
                   ),
                 ),
               ),
@@ -243,22 +221,11 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
                       fontSize: 20,
                     ),
                   ),
-                  subtitle: Row(
-                    children: [
-                      Icon(
-                        Icons.timer_outlined,
-                        size: 18,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        '12:45 pm',
-                        style: TextStyle(
-                          fontSize: 15,
-                        ),
-                      ),
-                    ],
+                  subtitle: Text(
+                    'Crossed the finish line !',
+                    style: TextStyle(
+                      fontSize: 15,
+                    ),
                   ),
                 ),
               ),
