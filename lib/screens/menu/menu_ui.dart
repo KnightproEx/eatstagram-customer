@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:eatstagram/components/image/default_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -137,12 +138,8 @@ class _MenuUIState extends State<MenuUI> {
                     ),
                     child: Stack(
                       children: <Widget>[
-                        Image.network(
-                          // TODO: placeholder image
-                          // TODO: loading builder
-                          // TODO: error builder
+                        DefaultNetworkImage(
                           _menuList[index].imagePath,
-                          fit: BoxFit.fill,
                         ),
                         Positioned(
                           top: 160,

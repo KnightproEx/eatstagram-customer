@@ -40,7 +40,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     yield CartInitial();
 
     if (event is EmptyCart) {
-      print('empty cart');
       _cart.clear();
     }
 

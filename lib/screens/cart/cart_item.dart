@@ -30,7 +30,6 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     final MenuModel _menu = widget._menu;
-    final int _quantity = widget._quantity;
 
     return Column(
       children: [
@@ -104,7 +103,7 @@ class _CartItemState extends State<CartItem> {
                   child: Container(
                     width: 30.0,
                     child: Text(
-                      '$_quantity',
+                      '${widget._quantity}',
                       textAlign: TextAlign.center,
                     ),
                   ),

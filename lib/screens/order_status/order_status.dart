@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/order_bloc/order_bloc.dart';
 import '../../components/appbar/default_appbar.dart';
-import '../../components/snackbar/defaultSnackbar.dart';
+import '../../components/snackbar/default_snackbar.dart';
 import 'order_status_ui.dart';
 
 class OrderStatus extends StatelessWidget {

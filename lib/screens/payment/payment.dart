@@ -1,11 +1,10 @@
 import 'package:eatstagram/blocs/cart_bloc/cart_bloc.dart';
-import 'package:eatstagram/screens/Menu/Menu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/payment_bloc/payment_bloc.dart';
 import '../../components/appbar/default_appbar.dart';
-import '../../components/snackbar/defaultSnackbar.dart';
+import '../../components/snackbar/default_snackbar.dart';
 import 'payment_ui.dart';
 
 class Payment extends StatelessWidget {

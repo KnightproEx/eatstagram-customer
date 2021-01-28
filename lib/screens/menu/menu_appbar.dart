@@ -9,7 +9,6 @@ class MenuAppBar extends PreferredSize {
     return AppBar(
       automaticallyImplyLeading: false,
       leading: IconButton(
-        // icon: Icon(Icons.account_circle_outlined),
         icon: Icon(Icons.menu),
         onPressed: () => Scaffold.of(context).openDrawer(),
         tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
@@ -33,8 +32,6 @@ class MenuAppBar extends PreferredSize {
           fontSize: 28,
         ),
       ),
-      // backgroundColor: Colors.white,
-      // elevation: 5,
       iconTheme: IconThemeData(
         color: Colors.black.withOpacity(0.9),
       ),

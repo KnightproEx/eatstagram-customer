@@ -3,16 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/restaurant_bloc/restaurant_bloc.dart';
 import '../../components/appbar/default_appbar.dart';
-import '../../components/snackbar/defaultSnackbar.dart';
+import '../../components/snackbar/default_snackbar.dart';
 import 'scanner_ui.dart';
 
 class Scanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () {
-        return Future.value(false);
-      },
+      onWillPop: () => Future.value(false),
       child: Scaffold(
         appBar: DefaultAppBar(backButton: false),
         body: BlocConsumer<RestaurantBloc, RestaurantState>(

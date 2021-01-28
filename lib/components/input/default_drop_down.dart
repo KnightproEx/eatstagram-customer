@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 
-class DefaultDropDownButton extends StatefulWidget {
+class DefaultDropDown extends StatefulWidget {
   final List<String> _itemList;
   final Function(String value) onChanged;
 
-  DefaultDropDownButton(
+  DefaultDropDown(
     this._itemList, {
     this.onChanged,
   });
 
   @override
-  _DefaultDropDownButtonState createState() => _DefaultDropDownButtonState();
+  _DefaultDropDownState createState() => _DefaultDropDownState();
 }
 
-class _DefaultDropDownButtonState extends State<DefaultDropDownButton> {
+class _DefaultDropDownState extends State<DefaultDropDown> {
   String _dropDownValue;
 
   @override
