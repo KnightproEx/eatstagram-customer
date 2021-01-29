@@ -77,16 +77,12 @@ class _MenuUIState extends State<MenuUI> {
             }
           },
           builder: (_, state) {
-            if (state is MenuLoading) {
-              return Container();
-            }
-
             List<GestureDetector> chipList = [];
 
             for (String category in _categoryList) {
               chipList.add(
                 GestureDetector(
-                  onTap: () => _controller.text = category,
+                  // onTap: () => TODO: chiplist filter & chiplist subcomponent,
                   child: Chip(
                     label: Text(
                       category,
@@ -146,8 +142,6 @@ class _MenuUIState extends State<MenuUI> {
                         children: <Widget>[
                           DefaultNetworkImage(
                             _menuList[index].imagePath,
-                          ),
-                      ),
                           ),
                           Positioned(
                             top: 160,
