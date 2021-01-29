@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:eatstagram/components/image/default_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -132,16 +131,17 @@ class _MenuUIState extends State<MenuUI> {
                         bottom: 5.0,
                       ),
                       elevation: 7.0,
-                      // Prevents picture from overriding card borders
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       borderOnForeground: true,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
                       child: Stack(
+                        fit: StackFit.expand,
                         children: <Widget>[
-                          DefaultNetworkImage(
+                          Image.network(
                             _menuList[index].imagePath,
+                            fit: BoxFit.fill,
                           ),
                           Positioned(
                             top: 160,

@@ -68,8 +68,10 @@ class _MealOptionUIState extends State<MealOptionUI> {
                     builder: (context, state) {
                       return state
                           // display when take away is selected
-                          ? Image.network(
-                              'https://cdn.asiatatler.com/asiatatler/i/hk/2020/08/10110831-gettyimages-1073048670_cover_2000x1500.jpg',
+                          ? Image.asset(
+                              'assets/images/take_away.png',
+                              height: 300.0,
+                              fit: BoxFit.contain,
                             )
 
                           // display when dine in is selected
@@ -101,9 +103,12 @@ class _MealOptionUIState extends State<MealOptionUI> {
                                   ),
                                 )
                               : Container(
-                                  child: Text('No table available!',
-                                      style:
-                                          TextStyle(color: Color(0xffaaaaaa))),
+                                  child: Text(
+                                    'No table available!',
+                                    style: TextStyle(
+                                      color: Color(0xffaaaaaa),
+                                    ),
+                                  ),
                                 );
                     },
                   ),
