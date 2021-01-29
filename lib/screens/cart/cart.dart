@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/cart_bloc/cart_bloc.dart';
-import '../../components/snackbar/defaultSnackbar.dart';
+import '../../components/snackbar/default_snackbar.dart';
 import 'cart_appbar.dart';
 import 'cart_ui.dart';
 

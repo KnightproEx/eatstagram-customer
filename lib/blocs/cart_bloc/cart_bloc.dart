@@ -9,11 +9,9 @@ part 'cart_event.dart';
 part 'cart_state.dart';
 
 class CartBloc extends Bloc<CartEvent, CartState> {
-  Map<String, Map<String, dynamic>> _cart;
+  Map<String, Map<String, dynamic>> _cart = {};
 
-  CartBloc()
-      : _cart = {},
-        super(CartInitial());
+  CartBloc() : super(CartInitial());
 
   List<Map<String, dynamic>> get cart {
     List<Map<String, dynamic>> temp = [];
@@ -41,7 +39,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Stream<CartState> mapEventToState(CartEvent event) async* {
     yield CartInitial();
 
-    if (event is InitializeCart) {
+    if (event is EmptyCart) {
       _cart.clear();
     }
 
@@ -65,7 +63,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     }
 
     if (event is ItemDecrement) {
-      _cart[event._id]['quantity'] -= _cart[event._id]['quantity'] <= 0 ? 0 : 1;
+      _cart[event._id]['quantity'] -= _cart[event._id]['quantity'] <= 1 ? 0 : 1;
       yield CartLoaded();
     }
 

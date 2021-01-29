@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../components/snackbar/defaultSnackbar.dart';
+import '../../components/snackbar/default_snackbar.dart';
 import '../menu/bloc/menu_bloc.dart';
 import '../menu/menu_appbar.dart';
 import 'menu_drawer.dart';

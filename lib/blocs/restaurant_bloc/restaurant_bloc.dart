@@ -70,7 +70,8 @@ class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
         }
 
         if (result.count != 1) {
-          throw InvalidInputException('Result count is not 1');
+          yield RestaurantError('Invalid restaurant QR!');
+          return;
         }
 
         _restaurant = RestaurantModel.fromJson(result.data);

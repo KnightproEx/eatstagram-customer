@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/restaurant_bloc/restaurant_bloc.dart';
 import '../../components/appbar/default_appbar.dart';
+import '../../components/image/default_circle_avatar.dart';
 import '../../models/restaurant_model.dart';
 
 class Restaurant extends StatefulWidget {
@@ -14,7 +15,6 @@ class Restaurant extends StatefulWidget {
 
 class _RestaurantState extends State<Restaurant> {
   RestaurantModel _restaurant;
-  bool _loaded = true;
 
   @override
   void didChangeDependencies() {
@@ -56,14 +56,9 @@ class _RestaurantState extends State<Restaurant> {
               child: CircleAvatar(
                 radius: 105,
                 backgroundColor: Colors.grey[50],
-                child: CircleAvatar(
-                  radius: 100,
-                  // TODO: placeholder image
-                  backgroundImage: _loaded
-                      ? NetworkImage(_restaurant.imagePath)
-                      : AssetImage('assets/images/restaurantpic.jpg'),
-                  onBackgroundImageError: (_, __) =>
-                      setState(() => _loaded = false),
+                child: DefaultCircleAvatar(
+                  _restaurant.imagePath,
+                  100.0,
                 ),
               ),
             ),

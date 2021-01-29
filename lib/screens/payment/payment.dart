@@ -1,9 +1,10 @@
+import 'package:eatstagram/blocs/cart_bloc/cart_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/payment_bloc/payment_bloc.dart';
 import '../../components/appbar/default_appbar.dart';
-import '../../components/snackbar/defaultSnackbar.dart';
+import '../../components/snackbar/default_snackbar.dart';
 import 'payment_ui.dart';
 
 class Payment extends StatelessWidget {
@@ -25,8 +26,10 @@ class Payment extends StatelessWidget {
           if (state is PaymentSuccess) {
             Navigator.of(context).pushNamedAndRemoveUntil(
               '/OrderStatus',
-              (_) => false,
+              ModalRoute.withName('/Menu'),
             );
+
+            BlocProvider.of<CartBloc>(context).add(EmptyCart());
           }
         },
         builder: (_, state) => state is PaymentLoading

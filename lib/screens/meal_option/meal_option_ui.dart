@@ -5,7 +5,7 @@ import 'package:sliding_switch/sliding_switch.dart';
 import '../../blocs/cart_bloc/cart_bloc.dart';
 import '../../blocs/restaurant_bloc/restaurant_bloc.dart';
 import '../../components/appbar/default_appbar.dart';
-import '../../components/input/defaultDropDownButton.dart';
+import '../../components/input/default_drop_down.dart';
 import 'bloc/meal_option_bloc.dart';
 
 class MealOptionUI extends StatefulWidget {
@@ -18,7 +18,6 @@ class _MealOptionUIState extends State<MealOptionUI> {
 
   @override
   void didChangeDependencies() {
-    BlocProvider.of<CartBloc>(context).add(InitializeCart());
     BlocProvider.of<RestaurantBloc>(context).setTable(1);
 
     _itemList = BlocProvider.of<RestaurantBloc>(context).tableList;
@@ -90,7 +89,7 @@ class _MealOptionUIState extends State<MealOptionUI> {
                                       subtitle: Container(
                                         height: 50.0,
                                         width: 250,
-                                        child: DefaultDropDownButton(
+                                        child: DefaultDropDown(
                                           _itemList,
                                           onChanged: (value) =>
                                               BlocProvider.of<RestaurantBloc>(
@@ -125,8 +124,7 @@ class _MealOptionUIState extends State<MealOptionUI> {
                           icon: Text('CONTINUE'),
                           label: Icon(Icons.arrow_forward),
                           onPressed: () {
-                            BlocProvider.of<CartBloc>(context)
-                                .add(InitializeCart());
+                            BlocProvider.of<CartBloc>(context).add(EmptyCart());
                             Navigator.of(context).pushNamed('/Menu');
                           }),
                     )

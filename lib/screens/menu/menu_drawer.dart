@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/restaurant_bloc/restaurant_bloc.dart';
+import '../../components/image/default_circle_avatar.dart';
 import '../../models/restaurant_model.dart';
 
 class MenuDrawer extends StatefulWidget {
@@ -10,8 +11,6 @@ class MenuDrawer extends StatefulWidget {
 }
 
 class _MenuDrawerState extends State<MenuDrawer> {
-  bool _loaded = true;
-
   @override
   Widget build(BuildContext context) {
     final RestaurantModel _restaurant =
@@ -26,14 +25,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
             child: Stack(
               children: [
                 Center(
-                  child: CircleAvatar(
-                    radius: 80,
-                    backgroundImage: _loaded
-                        ? NetworkImage(_restaurant.imagePath)
-                        // TODO: placeholder image
-                        : AssetImage('assets/images/restaurantpic.jpg'),
-                    onBackgroundImageError: (_, __) =>
-                        setState(() => _loaded = false),
+                  child: DefaultCircleAvatar(
+                    _restaurant.imagePath,
+                    80.0,
                   ),
                 ),
               ],
