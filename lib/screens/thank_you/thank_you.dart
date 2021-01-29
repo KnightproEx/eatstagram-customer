@@ -64,7 +64,7 @@ class _ThankYouState extends State<ThankYou> {
             padding: const EdgeInsets.only(top: 5.0),
             child: Container(
               height: 50,
-              width: 280,
+              width: 300,
               child: Text(
                 'Here\'s a summary of your order.',
                 style: Theme.of(context).textTheme.bodyText1,
@@ -204,7 +204,8 @@ class _ThankYouState extends State<ThankYou> {
           ),
 
           RaisedButton(
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () =>
+                Navigator.of(context).pushReplacementNamed('/Menu'),
             child: Text('Order Again'),
           )
         ],

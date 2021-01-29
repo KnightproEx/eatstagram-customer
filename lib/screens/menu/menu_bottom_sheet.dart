@@ -85,7 +85,7 @@ class _MenuBottomSheetState extends State<MenuBottomSheet> {
                   );
 
                   Flushbar(
-                    message: 'item added to cart',
+                    message: 'Item added to cart',
                     reverseAnimationCurve: Curves.decelerate,
                     forwardAnimationCurve: Curves.fastLinearToSlowEaseIn,
                     icon: Icon(

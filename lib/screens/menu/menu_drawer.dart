@@ -44,6 +44,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 ),
                 subtitle: Text(
                   _restaurant.title,
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ),
               Divider(
@@ -58,9 +59,8 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 ),
                 subtitle: Padding(
                   padding: const EdgeInsets.only(top: 4.0),
-                  child: Text(
-                    _restaurant.desc,
-                  ),
+                  child: Text(_restaurant.desc,
+                      style: Theme.of(context).textTheme.bodyText1),
                 ),
               ),
               Divider(
@@ -68,14 +68,13 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 height: 5,
               ),
               ListTile(
-                leading: Icon(Icons.call),
+                leading: Icon(Icons.email_rounded),
                 title: Text(
                   'Email',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text(
-                  _restaurant.email,
-                ),
+                subtitle: Text(_restaurant.email,
+                    style: Theme.of(context).textTheme.bodyText1),
               ),
               Divider(
                 indent: 70,
