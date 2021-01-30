@@ -23,8 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  another_flushbar: ^1.10.8
   equatable: ^1.2.5
-  flushbar: ^1.10.4
   flutter_barcode_scanner: ^1.0.1
   flutter_bloc: ^6.1.1
   flutter_icons: ^1.1.0
