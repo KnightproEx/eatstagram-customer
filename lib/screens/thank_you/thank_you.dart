@@ -147,7 +147,9 @@ class _ThankYouState extends State<ThankYou> {
                               ),
                             ),
                             Text(
-                              _order.table,
+                              int.parse(_order.table) == 0
+                                  ? '${_order.table} (Take Away)'
+                                  : _order.table,
                               style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.blueGrey[800],
@@ -183,7 +185,7 @@ class _ThankYouState extends State<ThankYou> {
                     Container(
                       width: 120,
                       child: Text(
-                        '\$${roundCurrency(BlocProvider.of<CartBloc>(context).total, 2)}',
+                        '\$${roundCurrency(_order.total, 2)}',
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.center,
                         style: TextStyle(

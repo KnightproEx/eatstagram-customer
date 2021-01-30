@@ -11,15 +11,11 @@ part 'restaurant_event.dart';
 part 'restaurant_state.dart';
 
 class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
-  RestaurantModel _restaurant;
-  int _table;
-  List<String> _tableList;
+  RestaurantModel _restaurant = RestaurantModel('', '', '', '', '', 0);
+  int _table = 0;
+  List<String> _tableList = [];
 
-  RestaurantBloc()
-      : _restaurant = RestaurantModel('', '', '', '', '', 0),
-        _table = 0,
-        _tableList = [],
-        super(RestaurantInitial());
+  RestaurantBloc() : super(RestaurantInitial());
 
   RestaurantModel get restaurant => _restaurant;
   int get table => _table;
@@ -61,7 +57,7 @@ class RestaurantBloc extends Bloc<RestaurantEvent, RestaurantState> {
         }
 
         DataModel result = await DataModelApi().post(
-          'customer/scanner.php',
+          'customer/fetch_restaurant.php',
           {'id': qr},
         );
 

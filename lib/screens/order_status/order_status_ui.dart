@@ -44,7 +44,7 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
   @override
   void didChangeDependencies() {
     _orderBloc = BlocProvider.of<OrderBloc>(context);
-    _order = OrderModel('', '', '', 1);
+    _order = _orderBloc.order;
 
     id = BlocProvider.of<PaymentBloc>(context).orderID;
     _orderBloc.add(FetchOrder(id));

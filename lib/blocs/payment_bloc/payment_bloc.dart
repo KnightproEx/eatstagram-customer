@@ -51,7 +51,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
         });
 
         DataModel result = await DataModelApi().post(
-          'customer/order.php',
+          'customer/add_order.php',
           {
             'table': event._table,
             'time': DateTime.now().toString(),

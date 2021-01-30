@@ -12,7 +12,7 @@ part 'order_event.dart';
 part 'order_state.dart';
 
 class OrderBloc extends Bloc<OrderEvent, OrderState> {
-  OrderModel _order = OrderModel('', '', '', 1);
+  OrderModel _order = OrderModel('', '', '', 1, 0.0);
 
   OrderBloc() : super(OrderInitial());
 

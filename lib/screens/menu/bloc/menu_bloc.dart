@@ -10,11 +10,9 @@ part 'menu_event.dart';
 part 'menu_state.dart';
 
 class MenuBloc extends Bloc<MenuEvent, MenuState> {
-  List<MenuModel> _menuList;
+  List<MenuModel> _menuList = [];
 
-  MenuBloc()
-      : _menuList = [],
-        super(MenuInitial());
+  MenuBloc() : super(MenuInitial());
 
   @override
   Stream<MenuState> mapEventToState(MenuEvent event) async* {
@@ -25,7 +23,7 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
         _menuList.clear();
 
         DataModel result = await DataModelApi().post(
-          'customer/menu.php',
+          'customer/fetch_menu.php',
           {'id': event._id},
         );
 

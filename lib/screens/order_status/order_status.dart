@@ -9,9 +9,12 @@ import 'order_status_ui.dart';
 class OrderStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    bool loaded = false;
+
     return Scaffold(
       appBar: DefaultAppBar(),
-      body: BlocListener<OrderBloc, OrderState>(
+      body: BlocConsumer<OrderBloc, OrderState>(
+        buildWhen: (_, current) => current is! OrderError,
         listenWhen: (_, current) =>
             current is OrderError || current is OrderLoaded,
         listener: (context, state) {
@@ -21,7 +24,14 @@ class OrderStatus extends StatelessWidget {
             );
           }
         },
-        child: OrderStatusUI(),
+        builder: (context, state) {
+          if (state is OrderLoading && !loaded) {
+            loaded = true;
+            return Center(child: CircularProgressIndicator());
+          }
+
+          return OrderStatusUI();
+        },
       ),
     );
   }

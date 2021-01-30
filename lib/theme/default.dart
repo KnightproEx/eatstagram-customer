@@ -24,11 +24,6 @@ ThemeData defaultTheme = ThemeData(
     ),
   ),
 
-  //snackbar theme
-  snackBarTheme: SnackBarThemeData(
-      // TODO: Snackbar theme
-      ),
-
   //default font family
   fontFamily: 'Poppins',
 
