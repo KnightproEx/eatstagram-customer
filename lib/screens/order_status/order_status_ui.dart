@@ -70,8 +70,6 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
 
         if (state is OrderLoaded && state.order.status == 3) {
           timer?.cancel();
-
-          Navigator.of(context).pushReplacementNamed('/ThankYou');
         }
       },
       builder: (context, state) {
@@ -230,6 +228,28 @@ class _OrderStatusUIState extends State<OrderStatusUI> {
                 ),
               ),
             ),
+
+            state is OrderLoaded && state.order.status == 3
+                ? Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: 50.0,
+                        width: 250.0,
+                        margin: EdgeInsets.only(
+                          top: 20.0,
+                        ),
+                        child: RaisedButton.icon(
+                          icon: Text('CONTINUE'),
+                          label: Icon(Icons.arrow_forward),
+                          onPressed: () => Navigator.of(context)
+                              .pushReplacementNamed('/ThankYou'),
+                        ),
+                      ),
+                    ],
+                  )
+                : Container(),
           ],
         );
       },
