@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../blocs/cart_bloc/cart_bloc.dart';
 import '../../blocs/order_bloc/order_bloc.dart';
 import '../../models/order_model.dart';
 import '../../utils/round_number.dart';
