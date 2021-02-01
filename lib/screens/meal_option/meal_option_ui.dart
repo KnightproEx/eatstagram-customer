@@ -70,7 +70,7 @@ class _MealOptionUIState extends State<MealOptionUI> {
                           // display when take away is selected
                           ? Image.asset(
                               'assets/images/take_away.png',
-                              height: 300.0,
+                              height: 220.0,
                               fit: BoxFit.contain,
                             )
 
