@@ -18,6 +18,7 @@ class _MenuUIState extends State<MenuUI> {
   MenuBloc _menuBloc;
   List<MenuModel> _menuList;
   List<String> _categoryList;
+  var _selected = false;
 
   @override
   void didChangeDependencies() {
@@ -77,18 +78,16 @@ class _MenuUIState extends State<MenuUI> {
             }
           },
           builder: (_, state) {
-            List<GestureDetector> chipList = [];
+            List<FilterChip> chipList = [];
 
             for (String category in _categoryList) {
               chipList.add(
-                GestureDetector(
-                  // onTap: () => // TODO: chiplist filter & chiplist subcomponent,
-                  child: Chip(
-                    label: Text(
-                      category,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                  ),
+                FilterChip(
+                  selected: _selected,
+                  label: Text(category),
+                  onSelected: (bool selected) {
+                    setState(() => _selected = !_selected);
+                  },
                 ),
               );
             }
