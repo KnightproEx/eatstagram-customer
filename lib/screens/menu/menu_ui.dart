@@ -72,8 +72,9 @@ class _MenuUIState extends State<MenuUI> {
               _categoryList.clear();
 
               for (MenuModel menu in _menuList) {
-                // TODO: category list duplication fix
-                _categoryList.add(menu.category);
+                if(!_categoryList.contains(menu.category)){
+                  _categoryList.add(menu.category);
+                }
               }
             }
           },
