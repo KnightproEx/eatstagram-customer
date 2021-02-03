@@ -72,7 +72,7 @@ class _MenuUIState extends State<MenuUI> {
               _categoryList.clear();
 
               for (MenuModel menu in _menuList) {
-                if(!_categoryList.contains(menu.category)){
+                if (!_categoryList.contains(menu.category)) {
                   _categoryList.add(menu.category);
                 }
               }
@@ -147,24 +147,32 @@ class _MenuUIState extends State<MenuUI> {
                           Positioned(
                             top: 160,
                             left: 15,
-                            child: Text(
-                              _menuList[index].name,
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
-                                fontSize: 30,
-                                fontWeight: FontWeight.w900,
+                            child: Container(
+                              width: 320,
+                              child: Text(
+                                _menuList[index].name,
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.9),
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.w900,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ),
                           Positioned(
                             top: 200,
                             left: 15,
-                            child: Text(
-                              _menuList[index].desc,
-                              style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
+                            child: Container(
+                              width: 340,
+                              child: Text(
+                                _menuList[index].desc,
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.9),
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                overflow: TextOverflow.ellipsis,
                               ),
                             ),
                           ),

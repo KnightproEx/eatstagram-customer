@@ -12,7 +12,7 @@ class OrderStatus extends StatelessWidget {
     bool loaded = false;
 
     return Scaffold(
-      appBar: DefaultAppBar(),
+      appBar: DefaultAppBar(backButton: false),
       body: BlocConsumer<OrderBloc, OrderState>(
         buildWhen: (_, current) => current is! OrderError,
         listenWhen: (_, current) =>
