@@ -21,6 +21,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
 
   @override
   Stream<PaymentState> mapEventToState(PaymentEvent event) async* {
+    yield PaymentInitial();
     if (event is SetPaymentMethod) {
       _paymentMethod = event._paymentMethod;
       yield PaymentMethodChanged();
