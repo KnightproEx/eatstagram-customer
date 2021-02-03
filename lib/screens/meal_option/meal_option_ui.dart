@@ -65,7 +65,7 @@ class _MealOptionUIState extends State<MealOptionUI> {
                       BlocProvider.of<RestaurantBloc>(context)
                           .setTable(state ? 0 : 1);
                     },
-                    builder: (context, state) {
+                    builder: (_, state) {
                       return state
                           // display when take away is selected
                           ? Image.asset(

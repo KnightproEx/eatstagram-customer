@@ -31,8 +31,8 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
           throw InvalidInputException(result.errorMsg);
         }
 
-        for (Map<String, dynamic> menuMap in result.data) {
-          _menuList.add(MenuModel.fromJson(menuMap));
+        for (Map<String, dynamic> map in result.data) {
+          _menuList.add(MenuModel.fromJson(map));
         }
 
         yield MenuLoaded(_menuList);
@@ -50,13 +50,11 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
       List<MenuModel> temp = [];
 
       for (MenuModel menu in _menuList) {
-        String menuName = menu.name.toUpperCase();
-        String search = event._search
-            .toUpperCase()
-            .trim()
-            .replaceAll(new RegExp(r'\s+'), ' ');
+        String name = menu.name.toUpperCase();
+        String search =
+            event._search.toUpperCase().trim().replaceAll(RegExp(r'\s+'), ' ');
 
-        if (!menuName.contains(search)) {
+        if (!name.contains(search)) {
           continue;
         }
 

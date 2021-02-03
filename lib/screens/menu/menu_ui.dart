@@ -60,7 +60,7 @@ class _MenuUIState extends State<MenuUI> {
           ),
         ),
 
-        // Food cuisine chip
+        // Category chip
         BlocConsumer<MenuBloc, MenuState>(
           buildWhen: (_, current) =>
               current is! MenuLoaded || current is! MenuSearchLoaded,
@@ -71,6 +71,7 @@ class _MenuUIState extends State<MenuUI> {
               _categoryList.clear();
 
               for (MenuModel menu in _menuList) {
+                // TODO: category list duplication fix
                 _categoryList.add(menu.category);
               }
             }
@@ -81,7 +82,7 @@ class _MenuUIState extends State<MenuUI> {
             for (String category in _categoryList) {
               chipList.add(
                 GestureDetector(
-                  // onTap: () => TODO: chiplist filter & chiplist subcomponent,
+                  // onTap: () => // TODO: chiplist filter & chiplist subcomponent,
                   child: Chip(
                     label: Text(
                       category,

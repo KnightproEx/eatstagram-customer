@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/restaurant_bloc/restaurant_bloc.dart';
-import '../../components/image/default_circle_avatar.dart';
 import '../../models/restaurant_model.dart';
 
 class MenuDrawer extends StatefulWidget {
@@ -25,9 +24,9 @@ class _MenuDrawerState extends State<MenuDrawer> {
             child: Stack(
               children: [
                 Center(
-                  child: DefaultCircleAvatar(
-                    _restaurant.imagePath,
-                    80.0,
+                  child: CircleAvatar(
+                    backgroundImage: NetworkImage(_restaurant.imagePath),
+                    radius: 80.0,
                   ),
                 ),
               ],
