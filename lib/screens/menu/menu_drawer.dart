@@ -26,7 +26,7 @@ class _MenuDrawerState extends State<MenuDrawer> {
                 Center(
                   child: CircleAvatar(
                     backgroundImage: NetworkImage(_restaurant.imagePath),
-                    radius: 80.0,
+                    radius: 60.0,
                   ),
                 ),
               ],
