@@ -1,16 +1,31 @@
-# eatstagram
+# Eatstagram
 
-A new Flutter project.
+A mobile app based , in-house restaurant management system built with [Flutter.](https://flutter.dev/) 
+
+Eatstagram has a separate restaurant app to provide access to administrative actions such as creating menus and updating orders. Together , they form a complete solution to digitalise an entire restaurant's workflow.  
+
+## Features 
+* Scan restaurant QR codes
+* View full restaurant menus 
+* Select and place orders
+* Display order status
+* Integrable payment gateways 
+
+## FAQs 
 
 ## Getting Started
+1. Setup [Flutter](https://flutter.dev/docs/get-started/install)
+2. Git clone this project  
+`$ git clone https://github.com/KnightproEx/eatstagram-customer.git`
+3. Run it on an emulator/device from Android Studio , VS Code or your preferred editor
 
-This project is a starting point for a Flutter application.
+Alternatively , you may [download]() the APK release here.
 
-A few resources to get you started if this is your first Flutter project:
+## Authors 
+Khong Boon Hui 
+Nicholas Chin 
+Erwin Koon 
+Teo Jack Feng
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+**to be determined
