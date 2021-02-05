@@ -26,8 +26,9 @@ class _MenuUIState extends State<MenuUI> {
     _menuList = [];
     _categoryList = [];
 
-    String id = BlocProvider.of<RestaurantBloc>(context).restaurant.id;
-    _menuBloc.add(FetchMenu(id));
+    _menuBloc.add(FetchMenu(
+      BlocProvider.of<RestaurantBloc>(context).restaurant.id,
+    ));
 
     super.didChangeDependencies();
   }
