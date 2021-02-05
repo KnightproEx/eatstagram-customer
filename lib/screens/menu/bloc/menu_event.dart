@@ -24,3 +24,12 @@ class SearchMenu extends MenuEvent {
   @override
   List<Object> get props => [_search];
 }
+
+class FilterMenu extends MenuEvent {
+  final String _category;
+
+  FilterMenu(this._category);
+
+  @override
+  List<Object> get props => [_category];
+}

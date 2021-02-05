@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../blocs/restaurant_bloc/restaurant_bloc.dart';
+import '../../components/chip/default_filter_chip.dart';
 import '../../models/menu_model.dart';
 import '../../utils/round_number.dart';
 import 'bloc/menu_bloc.dart';
@@ -18,10 +19,11 @@ class _MenuUIState extends State<MenuUI> {
   MenuBloc _menuBloc;
   List<MenuModel> _menuList;
   List<String> _categoryList;
-  var _selected = false;
+  TextEditingController _searchController;
 
   @override
   void didChangeDependencies() {
+    _searchController = TextEditingController();
     _menuBloc = BlocProvider.of<MenuBloc>(context);
     _menuList = [];
     _categoryList = [];
@@ -31,6 +33,12 @@ class _MenuUIState extends State<MenuUI> {
     ));
 
     super.didChangeDependencies();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
   }
 
   @override
@@ -47,6 +55,7 @@ class _MenuUIState extends State<MenuUI> {
           ),
           child: TextField(
             onChanged: (value) => _menuBloc.add(SearchMenu(value)),
+            controller: _searchController,
             decoration: InputDecoration(
               hintStyle: TextStyle(fontSize: 17),
               hintText: 'Let\'s find good food',
@@ -80,15 +89,15 @@ class _MenuUIState extends State<MenuUI> {
             }
           },
           builder: (_, state) {
-            List<FilterChip> chipList = [];
+            List<DefaultFilterChip> chipList = [];
 
             for (String category in _categoryList) {
               chipList.add(
-                FilterChip(
-                  selected: _selected,
-                  label: Text(category),
-                  onSelected: (bool selected) {
-                    setState(() => _selected = !_selected);
+                DefaultFilterChip(
+                  text: category,
+                  onSelected: (selected) {
+                    _searchController.clear();
+                    _menuBloc.add(FilterMenu(category));
                   },
                 ),
               );

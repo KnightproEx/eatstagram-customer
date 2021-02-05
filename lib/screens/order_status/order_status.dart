@@ -11,27 +11,30 @@ class OrderStatus extends StatelessWidget {
   Widget build(BuildContext context) {
     bool loaded = false;
 
-    return Scaffold(
-      appBar: DefaultAppBar(backButton: false),
-      body: BlocConsumer<OrderBloc, OrderState>(
-        buildWhen: (_, current) => current is! OrderError,
-        listenWhen: (_, current) =>
-            current is OrderError || current is OrderLoaded,
-        listener: (context, state) {
-          if (state is OrderError) {
-            Scaffold.of(context).showSnackBar(
-              defaultSnackBar(state.message),
-            );
-          }
-        },
-        builder: (context, state) {
-          if (state is OrderLoading && !loaded) {
-            loaded = true;
-            return Center(child: CircularProgressIndicator());
-          }
+    return WillPopScope(
+      onWillPop: () => Future.value(false),
+      child: Scaffold(
+        appBar: DefaultAppBar(backButton: false),
+        body: BlocConsumer<OrderBloc, OrderState>(
+          buildWhen: (_, current) => current is! OrderError,
+          listenWhen: (_, current) =>
+              current is OrderError || current is OrderLoaded,
+          listener: (context, state) {
+            if (state is OrderError) {
+              Scaffold.of(context).showSnackBar(
+                defaultSnackBar(state.message),
+              );
+            }
+          },
+          builder: (context, state) {
+            if (state is OrderLoading && !loaded) {
+              loaded = true;
+              return Center(child: CircularProgressIndicator());
+            }
 
-          return OrderStatusUI();
-        },
+            return OrderStatusUI();
+          },
+        ),
       ),
     );
   }

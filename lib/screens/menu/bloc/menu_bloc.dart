@@ -11,6 +11,7 @@ part 'menu_state.dart';
 
 class MenuBloc extends Bloc<MenuEvent, MenuState> {
   List<MenuModel> _menuList = [];
+  List<String> _categoryList = [];
 
   MenuBloc() : super(MenuInitial());
 
@@ -53,8 +54,43 @@ class MenuBloc extends Bloc<MenuEvent, MenuState> {
         String name = menu.name.toUpperCase();
         String search =
             event._search.toUpperCase().trim().replaceAll(RegExp(r'\s+'), ' ');
+        bool show = false;
 
-        if (!name.contains(search)) {
+        _categoryList.forEach((e) {
+          if (menu.category == e) {
+            show = true;
+          }
+        });
+
+        if (!name.contains(search) || (!show && _categoryList.length > 0)) {
+          continue;
+        }
+
+        temp.add(menu);
+      }
+
+      yield MenuSearchLoaded(temp);
+    }
+
+    if (event is FilterMenu) {
+      List<MenuModel> temp = [];
+
+      if (_categoryList.contains(event._category)) {
+        _categoryList.remove(event._category);
+      } else {
+        _categoryList.add(event._category);
+      }
+
+      for (MenuModel menu in _menuList) {
+        bool show = false;
+
+        _categoryList.forEach((e) {
+          if (menu.category == e) {
+            show = true;
+          }
+        });
+
+        if (!show && _categoryList.length > 0) {
           continue;
         }
 
