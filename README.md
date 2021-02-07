@@ -7,9 +7,13 @@ Eatstagram has a separate [restaurant app](https://github.com/KnightproEx/eatsta
 ## Features 
 ### Scan restaurant QR codes
 
+All restaurants are given a unique QR code , which can be scanned to reveal an interactive and easy to use digital menu of the restaurant. 
+
 <img src="https://user-images.githubusercontent.com/33112835/107112969-6db69f00-6896-11eb-8165-aa0337ba989e.png" width="270" height="555"/>
 
 ### View full restaurant menus
+
+An entire digital menu , at your fingertips. Search for your favourite food , filter what you'd like to have at the moment , and pick between dine in/takeout options.
 
 <p float="left">
   
@@ -20,6 +24,8 @@ Eatstagram has a separate [restaurant app](https://github.com/KnightproEx/eatsta
 </p>
 
 ### Select and place orders
+
+Placing an order is as easy as it looks. It takes only about 2 minutes for you to place an order , and most importantly make sure its never forgotten through the system. 
 
 <p float="left">
   
@@ -33,13 +39,15 @@ Eatstagram has a separate [restaurant app](https://github.com/KnightproEx/eatsta
 
 ### Display order status
 
+We hate second guessing too ! Customers will no longer be left wondering and instead be able to view how their orders are progressing in real-time. 
+
 <img src="https://user-images.githubusercontent.com/33112835/107113462-01d63580-689a-11eb-9eff-4d08dc2472be.png" width="270" height="555"/>
 
 ### Integrable payment gateways 
 
-<img src="https://user-images.githubusercontent.com/33112835/107113527-7610d900-689a-11eb-8d5f-8561da7d2f6e.png" width="270" height="555"/>
+Thanks to the flexibility of Flutter , integration of your favourite payment gateways such as [Stripe](https://pub.dev/packages/flutter_stripe_payment) , [GooglePay](https://pub.dev/packages/flutter_google_pay) is a breeze with [Dart packages.](https://pub.dev/) 
 
-## FAQs 
+<img src="https://user-images.githubusercontent.com/33112835/107139075-5d182e80-6953-11eb-89ea-1e651bd36ce1.png" width="270" height="555"/>
 
 ## Getting Started
 1. Setup [Flutter](https://flutter.dev/docs/get-started/install)
@@ -50,10 +58,10 @@ Eatstagram has a separate [restaurant app](https://github.com/KnightproEx/eatsta
 Alternatively , you may [download]() the APK release here.
 
 ## Authors 
-* Khong Boon Hui 
-* Nicholas Chin 
-* Erwin Koon 
-* Teo Jack Feng
+* Khong Boon Hui @KnightproEx
+* Nicholas Chin @V4L3NT1N3
+* Erwin Koon @Erwin2371
+* Teo Jack Feng @Jackfeng0322
 
 ## License
 **to be determined
