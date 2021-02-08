@@ -63,5 +63,3 @@ Alternatively , you may [download]() the APK release here.
 * Erwin Koon @Erwin2371
 * Teo Jack Feng @Jackfeng0322
 
-## License
-**to be determined
