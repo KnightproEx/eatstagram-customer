@@ -55,6 +55,8 @@ Thanks to the flexibility of Flutter , integration of your favourite payment gat
 `$ git clone https://github.com/KnightproEx/eatstagram-customer.git`
 3. Run it on an emulator/device from Android Studio , VS Code or your preferred editor
 
+This project uses [Dart Packages](https://pub.dev/) which may popup as errors when running the project. Simply run `pub get` in `pubspec.yaml` to pull the required packages.
+
 Alternatively , you may [download]() the APK release here.
 
 ## Authors 
