@@ -45,7 +45,7 @@ We hate second guessing too! Customers will no longer be left wondering and inst
 
 ### Integrable payment gateways 
 
-Thanks to the flexibility of Flutter , integration of your favourite payment gateways such as [Stripe](https://pub.dev/packages/flutter_stripe_payment) , [GooglePay](https://pub.dev/packages/flutter_google_pay) is a breeze with [Dart packages.](https://pub.dev/) 
+Thanks to the flexibility of Flutter, integration of your favourite payment gateways such as [Stripe](https://pub.dev/packages/flutter_stripe_payment), [GooglePay](https://pub.dev/packages/flutter_google_pay) is a breeze with [Dart packages.](https://pub.dev/) 
 
 <img src="https://user-images.githubusercontent.com/33112835/107139075-5d182e80-6953-11eb-89ea-1e651bd36ce1.png" width="270" height="555"/>
 
