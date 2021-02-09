@@ -59,6 +59,10 @@ This project uses [Dart Packages](https://pub.dev/) which may popup as errors wh
 
 Alternatively , you may [download]() the APK release here.
 
+## Future Enhancements 
+- [ ] Caching for orders until they are complete , so that its still visible after closing the app 
+- [ ] Cart icon quantity indicators
+
 ## Authors 
 * Khong Boon Hui @KnightproEx
 * Nicholas Chin @V4L3NT1N3
