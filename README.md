@@ -62,6 +62,7 @@ Alternatively , you may [download]() the APK release here.
 ## Future Enhancements 
 - [ ] Caching for orders until they are complete, so that its still visible after closing the app 
 - [ ] Cart icon quantity indicators
+- [ ] IOS Support
 
 ## Authors 
 * Khong Boon Hui [@KnightproEx](https://github.com/KnightproEx)
