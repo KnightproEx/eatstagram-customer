@@ -1,6 +1,6 @@
 # Eatstagram
 
-A mobile app based, in-house restaurant management system built with [Flutter.](https://flutter.dev/) 
+A mobile app based, in-house restaurant management system built with [Flutter](https://flutter.dev/).
 
 Eatstagram has a separate [restaurant app](https://github.com/KnightproEx/eatstagram-restaurant) to provide access to administrative actions such as creating menus and updating orders. Together, they form a complete solution to digitalise an entire restaurant's workflow.  
 
