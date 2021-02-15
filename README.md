@@ -57,7 +57,7 @@ Thanks to the flexibility of Flutter, integration of your favourite payment gate
 
 This project uses [Dart Packages](https://pub.dev/) which may popup as errors when running the project. Simply run `pub get` in `pubspec.yaml` to pull the required packages.
 
-Alternatively , you may [download]() the APK release here.
+Alternatively , you may [download](https://github.com/KnightproEx/eatstagram-customer/releases/download/v1.0-alpha/eatstagram-customer.apk) the APK release here.
 
 ## Future Enhancements 
 - [ ] Caching for orders until they are complete, so that its still visible after closing the app 
